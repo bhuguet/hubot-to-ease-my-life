@@ -26,21 +26,29 @@ RUN pip install Skype4Py
 ENV HUBOT_PORT 8080
 #ENV HUBOT_ADAPTER shell
 ENV HUBOT_ADAPTER hubot-skype
-ENV HUBOT_NAME hubotDojo
+ENV HUBOT_NAME hubot
 ENV PORT ${HUBOT_PORT}
 
 EXPOSE ${HUBOT_PORT}
 
 ADD dialogue.coffee ${BOTDIR}/scripts/example.coffee
 ADD package.json ${BOTDIR} 
+ADD external-scripts.json ${BOTDIR}
+ADD Procfile ${BOTDIR}
 
 RUN npm install
 RUN npm install --save hubot-skype
 
-ADD start.sh ${BOTDIR}/start.sh
-RUN chmod +x ${BOTDIR}/start.sh
+ADD .Skype /root/.Skype
 
-CMD ./start.sh
+#ADD start.sh ${BOTDIR}/start.sh
+#RUN chmod +x ${BOTDIR}/start.sh
+
+#CMD ./start.sh
+
+ADD hubot-run.sh ${BOTDIR}/hubot-run.sh
+#CMD xvfb-run /bin/sh ${BOTDIR}/hubot-run.sh
+CMD tail -f /dev/null
 
 #Inspiré de https://github.com/netpro2k/hubot-skype
 #RUN npm install -g hubot coffee-script
