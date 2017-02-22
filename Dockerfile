@@ -20,9 +20,12 @@ RUN apt-get install -y skype
 RUN apt-get install -y xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic python-pip redis-server
 
 WORKDIR ${BOTDIR}
-        
+       
+RUN pip install Skype4Py
+ 
 ENV HUBOT_PORT 8080
-ENV HUBOT_ADAPTER shell
+#ENV HUBOT_ADAPTER shell
+ENV HUBOT_ADAPTER hubot-skype
 ENV HUBOT_NAME hubotDojo
 ENV PORT ${HUBOT_PORT}
 
@@ -32,6 +35,7 @@ ADD dialogue.coffee ${BOTDIR}/scripts/example.coffee
 ADD package.json ${BOTDIR} 
 
 RUN npm install
+RUN npm install --save hubot-skype
 
 ADD start.sh ${BOTDIR}/start.sh
 RUN chmod +x ${BOTDIR}/start.sh
@@ -42,10 +46,6 @@ CMD ./start.sh
 #RUN npm install -g hubot coffee-script
 #RUN hubot --create hubot-skype
 #WORKDIR hubot-skype
-#RUN pip install Skype4Py
-#RUN npm install
-#RUN npm install --save hubot-skype
-#ENV HUBOT_NAME hubot
 #ADD hubot-scripts.json /hubot-skype/hubot-scripts.json
 #ADD .Skype /.Skype
 #ADD hubot-run.sh /hubot-skype/hubot-run.sh
