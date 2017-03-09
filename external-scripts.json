@@ -1,13 +1,9 @@
 [
-  "hubot-diagnostics",
-  "hubot-help",
-  "hubot-google-images",
-  "hubot-google-translate",
-  "hubot-pugme",
-  "hubot-maps",
   "hubot-redis-brain",
-  "hubot-rules",
-  "hubot-shipit",
-  "hubot-youtube",
-  "hubot-skype"
+  "hubot-help",
+  "hubot-pugme",
+  "hubot-diagnostics",
+  "hubot-codinglove",
+  "hubot-google-translate",
+  "hubot-timezones-hipchat"
 ]
