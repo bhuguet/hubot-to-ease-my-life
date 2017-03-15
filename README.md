@@ -1,15 +1,12 @@
 # hubot-to-ease-my-life
 
+docker-compose build
 
-docker build -t hubot .
+docker-compose up -d
 
-docker run -d hubot
+cat hubot.env
 
-docker exec -ti ${CONTAINER_NAME} /opt/bot/bin/hubot
-
-Notes:
-- hubot-scripts.json ne sert plus
-- external-scripts.json ne servirait pas non plus ? 
-- installer hubot-skype-bot: https://www.npmjs.com/package/hubot-skype-bot et lancer ainsi: bin/hubot -a skype-bot
--
-
+HUBOT_HIPCHAT_JID=xxxxxxx@chat.hipchat.com
+HUBOT_HIPCHAT_PASSWORD=xxxxxxxxxx
+HUBOT_HIPCHAT_ROOMS=xxxxxxxx
+HUBOT_LOG_LEVEL=debug
