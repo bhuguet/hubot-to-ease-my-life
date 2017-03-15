@@ -15,7 +15,7 @@ RUN apt-get install -y python-software-properties python software-properties-com
 RUN add-apt-repository "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 RUN dpkg --add-architecture i386
 RUN apt-get update
-RUN apt-get install -y skype
+#RUN apt-get install -y skype
 
 RUN apt-get install -y xvfb x11-xkb-utils xfonts-100dpi xfonts-75dpi xfonts-scalable xfonts-cyrillic python-pip redis-server
 
@@ -25,7 +25,7 @@ RUN pip install Skype4Py
  
 ENV HUBOT_PORT 8080
 #ENV HUBOT_ADAPTER shell
-ENV HUBOT_ADAPTER hubot-skype
+ENV HUBOT_ADAPTER hubot-hipchat
 ENV HUBOT_NAME hubot
 ENV PORT ${HUBOT_PORT}
 
@@ -37,9 +37,10 @@ ADD external-scripts.json ${BOTDIR}
 ADD Procfile ${BOTDIR}
 
 RUN npm install
-RUN npm install --save hubot-skype
+#RUN npm install --save hubot-skype
+RUN npm install --save hubot-hipchat
 
-ADD .Skype /root/.Skype
+#ADD .Skype /root/.Skype
 
 #ADD start.sh ${BOTDIR}/start.sh
 #RUN chmod +x ${BOTDIR}/start.sh
@@ -47,8 +48,8 @@ ADD .Skype /root/.Skype
 #CMD ./start.sh
 
 ADD hubot-run.sh ${BOTDIR}/hubot-run.sh
-#CMD xvfb-run /bin/sh ${BOTDIR}/hubot-run.sh
-CMD tail -f /dev/null
+CMD xvfb-run /bin/sh ${BOTDIR}/hubot-run.sh
+#CMD tail -f /dev/null
 
 #Inspiré de https://github.com/netpro2k/hubot-skype
 #RUN npm install -g hubot coffee-script
