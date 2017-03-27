@@ -45,5 +45,5 @@ RUN npm install --save hubot-hipchat
 
 RUN rm -fv ${BOTDIR}/hubot-scripts.json
 ADD hubot-run.sh ${BOTDIR}/hubot-run.sh
-CMD xvfb-run /bin/sh ${BOTDIR}/hubot-run.sh
+CMD /bin/sh ${BOTDIR}/hubot-run.sh
 #CMD tail -f /dev/null
