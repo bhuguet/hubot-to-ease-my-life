@@ -4,7 +4,7 @@ docker-compose build
 
 docker-compose up -d
 
-cat hubot.env
+cp hubot.env.template hubot.env
 
 HUBOT_HIPCHAT_JID=xxxxxxx@chat.hipchat.com
 HUBOT_HIPCHAT_PASSWORD=xxxxxxxxxx

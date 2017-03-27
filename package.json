@@ -1,9 +1,9 @@
 {
-  "name": "bot",
+  "name": "Hubot",
   "version": "0.0.1",
   "private": true,
-  "author": "nhoag",
-  "description": "A simple helpful robot",
+  "author": "bhuguet",
+  "description": "Hubot to ease my life",
   "dependencies": {
     "hubot": "^2.9.3",
     "hubot-codinglove": "^0.2.6",
