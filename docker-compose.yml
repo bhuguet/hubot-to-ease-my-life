@@ -4,5 +4,6 @@ services:
     build: .
     volumes:
     - ./:/opt/bot
+    - ~/.ssh:/root/.ssh
     env_file:
       - hubot.env
