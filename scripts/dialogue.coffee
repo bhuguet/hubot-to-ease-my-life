@@ -20,6 +20,14 @@ module.exports = (robot) ->
    robot.hear /ça va ?/i, (res) ->
      res.send "ça roule ma poule !"
 
+   robot.listen(
+     (message) -> # Match function
+       # Occassionally respond to things that Steve says
+       message.user.name is "Sebastien Fromont" and Math.random() > 0.8
+     (response) -> # Standard listener callback
+       # Let Steve know how happy you are that he exists
+       response.reply "Seb, tu es très drole! (mais seulement #{response.match * 100}% du temps)"
+
    robot.hear /badger/i, (res) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
   
