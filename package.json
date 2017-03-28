@@ -15,7 +15,7 @@
     "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.2",
     "hubot-timezones-hipchat": "0.0.4",
-    "hubot-jira": "git@bitbucket.org:bhuguet/hubot-jira.git"
+    "hubot-jira": "git+ssh://git@bitbucket.org/bhuguet/hubot-jira.git"
   },
   "engines": {
     "node": "0.10.x"
