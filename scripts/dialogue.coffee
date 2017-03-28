@@ -27,6 +27,7 @@ module.exports = (robot) ->
      (response) -> # Standard listener callback
        # Let Steve know how happy you are that he exists
        response.reply "Seb, tu es très drole! (mais seulement #{response.match * 100}% du temps)"
+    )
 
    robot.hear /badger/i, (res) ->
      res.send "Badgers? BADGERS? WE DON'T NEED NO STINKIN BADGERS"
