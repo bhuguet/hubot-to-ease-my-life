@@ -38,5 +38,5 @@ RUN npm install
 RUN npm install --save hubot-hipchat
 RUN npm install --save hubot-jira
 
-#CMD /bin/sh ${BOTDIR}/hubot-run.sh
-CMD tail -f /dev/null
+CMD /bin/sh ${BOTDIR}/hubot-run.sh
+#CMD tail -f /dev/null
