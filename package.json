@@ -6,13 +6,10 @@
   "description": "Hubot to ease my life",
   "dependencies": {
     "hubot": "^2.9.3",
-    "hubot-codinglove": "^0.2.6",
     "hubot-darksky": "^1.1.0",
     "hubot-diagnostics": "0.0.1",
-    "hubot-google-translate": "^0.2.0",
     "hubot-help": "^0.1.1",
     "hubot-hipchat": "^2.12.0-6",
-    "hubot-pugme": "^0.1.0",
     "hubot-redis-brain": "0.0.2",
     "hubot-timezones-hipchat": "0.0.4",
     "hubot-jira": "git+ssh://git@bitbucket.org/bhuguet/hubot-jira.git"

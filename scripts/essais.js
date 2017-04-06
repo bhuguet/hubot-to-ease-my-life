@@ -9,7 +9,6 @@
 //   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
 //
 // Commands:
-//   hubot java - Réponds Java bien ! (en javascript)
 
 module.exports = function(robot) {
 
