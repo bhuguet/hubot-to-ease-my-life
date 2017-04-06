@@ -1,10 +1,7 @@
 [
   "hubot-redis-brain",
   "hubot-help",
-  "hubot-pugme",
   "hubot-diagnostics",
-  "hubot-codinglove",
-  "hubot-google-translate",
   "hubot-timezones-hipchat",
   "hubot-jira"
 ]
