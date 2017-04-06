@@ -1,9 +1,14 @@
 version: '2'
 services:
+#Stack SSH
+  ssh:
+    image: whilp/ssh-agent
+    volumes:
+      - ~/.ssh:/root/.ssh
+
   hubot:
     build: .
     volumes:
     - ./:/opt/bot
-    - ~/.ssh:/root/.ssh
     env_file:
       - hubot.env
