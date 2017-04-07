@@ -27,8 +27,8 @@ ADD id_rsa /root/.ssh/id_rsa
 # Create known_hosts
 RUN touch /root/.ssh/known_hosts && \
   ssh-keyscan bitbucket.org >> /root/.ssh/known_hosts
-RUN mkdir -p ${BOTDIR}/tools
-RUN git clone --depth=1 git@bitbucket.org:bhuguet/serialjiracreator.git ${BOTDIR}/tools/serialjiracreator
+RUN mkdir -p /opt/bot/tools
+RUN git clone --depth=1 git@bitbucket.org:bhuguet/serialjiracreator.git /opt/bot/tools/serialjiracreator
        
 ENV HUBOT_PORT 8080
 ENV PORT ${HUBOT_PORT}
